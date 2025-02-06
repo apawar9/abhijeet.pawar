@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Abhijeet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.bundle.css">
+  <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
+  <style>
+    :root {
+      --primary: #00ffff;
+      --secondary: #ff1493;
+      --accent: #7fff00;
+      --text: #ffffff;
+      --dark: #1a1a1a;
+      --card-bg: rgba(26, 26, 26, 0.8);
+      --navbar-bg: rgb(126 111 111 / 56%);
+      
+    }
+    body {
+      background: linear-gradient(135deg, var(--dark), #000000);
+      color: var(--text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+    .navbar {
+      background-color: var(--navbar-bg) !important;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    .navbar-item {
+      color: var(--text);
+      margin: 0 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      text-decoration: none;
+    }
+    .navbar-item:hover {
+      color: var(--primary);
+    }
+    .navbar-item::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+    .navbar-item:hover::after {
+      width: 100%;
+    }
+    .hero {
+      background: linear-gradient(45deg, var(--primary), var(--secondary)) !important;
+      padding: 6rem 0;
+    }
+    .card {
+      background-color: var(--card-bg);
+      border: 2px solid var(--primary);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin: 1rem 0;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    }
+    .title {
+      color: var(--primary) !important;
+      font-weight: 600;
+    }
+    .subtitle {
+      color: var(--text) !important;
+      font-weight: 300;
+    }
+    .button.is-primary {
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      color: var(--dark);
+      border: none;
+      border-radius: 25px;
+      padding: 0.5rem 1.5rem;
+      transition: transform 0.2s ease;
+    }
+    .button.is-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    }
+    .animated-text {
+      font-size: 3.5rem;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s ease-in-out infinite;
+    }
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      }
+      50% {
+        text-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+      }
+    }
+    .tag {
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      color: var(--dark);
+      border-radius: 15px;
+      padding: 0.5em 1em;
+      margin: 0.2em;
+      font-weight: 500;
+    }
+    .section {
+      padding: 5rem 1.5rem;
+      scroll-margin-top: 4rem;
+    }
+    .footer {
+      background-color: var(--card-bg);
+      backdrop-filter: blur(10px);
+    }
+    hr {
+      background-color: var(--primary);
+      height: 3px;
+      margin: 2rem 0;
+      opacity: 0.5;
+    }
+    .icon {
+      color: var(--primary);
+      transition: color 0.3s ease;
+    }
+    .icon:hover {
+      color: var(--accent);
+    }
+    .image.is-rounded img {
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <a href="#about" class="navbar-item">About</a>
+          <a href="#experience" class="navbar-item">Experience</a>
+          <a href="#projects" class="navbar-item">Projects</a>
+          <a href="#education" class="navbar-item">Education</a>
+          <a href="#contact" class="navbar-item">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="level">
+          <div class="level-item has-text-centered">
+            <figure class="image is-256x256" style="margin: 0 auto;">
+              <img class="is-rounded" src="img/me-big.jpg" style="object-fit: cover; width: 100%; height: 100%;">
+            </figure>
+          </div>
+        </div>
+        <div class="columns has-text-centered">
+          <div class="column">
+            <h1 style="font-size: 2.5rem; animation: fadeInScale 1.5s ease-out;">
+              Hello, I am <span style="color: rgb(6, 111, 231); animation: colorPulse 3s infinite;">Abhijeet Pawar</span>
+            </h1>
+            <h2 class="subtitle mt-4">
+              Security Engineering, Threat Hunting, Application Security, Cloud Security, Incident Response, Cybersecurity
+            </h2>
+            <p>
+              <a href="docs/resume.pdf" class="icon has-text-light" style="margin-top: 20px;">
+                <i class="fas fa-file-word"></i> <strong>Resume</strong>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="section">
+    <div class="container">
+      <h1 class="title">About Me</h1>
+      <hr />
+      <div class="content">
+        <div class="columns">
+          <div class="column">
+            <p class="is-size-6">
+              Hey there! I'm <strong>Abhijeet Pawar</strong>, a cybersecurity professional with a passion for solving complex security challenges. With over three years of experience in security engineering and incident response, I've worked on everything from threat detection and cloud security to automating detection models that make security teams more efficient.
+            </p>
+            <p class="is-size-6 mt-4">
+              I love digging into security incidents, analyzing patterns, and building solutions that stop threats before they become problems. Whether it's hunting for vulnerabilities, writing detection rules, or securing cloud environments, I'm always up for a challenge.
+            </p>
+            <p class="is-size-6 mt-4">
+              Outside of work, I enjoy competing in cybersecurity competitions, where I've secured top placements in CTFs and cyber defense games. I've also published research on third-party risk management and cyber-attack simulations, diving deep into how we can better defend against evolving threats.
+            </p>
+            <p class="is-size-6 mt-4">
+              I'm always looking to connect with like-minded professionals, collaborate on security projects, or just chat about the latest in cybersecurity. If that sounds like you—let's talk!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="experience" class="section">
+    <div class="container">
+      <h1 class="title">Experience</h1>
+      <hr />
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="img/1.png" alt="Circle Logo">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Circle Internet Financial</p>
+              <p class="subtitle is-6">Security Detection and Response Engineer Intern<time datetime="2024-5">May 2024</time> - <time datetime="2024-12">December 2024</time></p>
+            </div>
+          </div>
+          <div class="content">
+            <ul>
+              <li>Led 150+ security investigations, managing on-call to identify root causes, taking corrective actions, and document findings on various threats (malicious phishing campaigns, cloud anomalies, endpoint activity, emerging threats).</li>
+              <li>Developed a Python-based "Sigma Converter" tool to automate 100+ Sigma rule conversions into detection rules for Panther SIEM and SentinelOne STAR, reducing deployment time by 50% and enhancing threat detection coverage by 15%.</li>
+              <li>Implemented 25+ detection rules for recent incidents, data leaks, and emerging threats, including excessive OnePassword login attempts and Okta admin misuse, resulting in the detection of 8 unknown threats and a 10% reduction in false positives.</li>
+              <li>Secured 1,550+ Google OAuth applications and Chrome extensions, blocking 80 unauthorized apps and implementing secure configurations to reduce the attack surface by an estimated 5% and prevent potential data breaches.</li>
+              <li>Led threat hunting efforts for the Polyfill supply chain attack, removing malicious components, identifying 30 vulnerabilities across 10 repositories, and driving remediation, successfully preventing a potential compromise.</li>
+              <li>Utilized Anomali, VirusTotal, URLScan, Google Admin Console, and Proofpoint to block ~20 phishing attempts/month and reduce successful attacks by 5%.</li>
+              <li>Leveraged SentinelOne EDR and Snowflake for incident investigation, utilizing Python and Power Query to analyze data and identify indicators in alignment with the MITRE framework.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">SIEM</span>
+              <span class="tag">EDR</span>
+              <span class="tag">Threat Hunting</span>
+              <span class="tag">Incident Response</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="img/2.png" alt="Atos Logo">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Atos</p>
+              <p class="subtitle is-6">Cyber Security Consultant - <time datetime="2021-8">August 2021</time> - <time datetime="2023-6">June 2023</time></p>
+            </div>
+          </div>
+          <div class="content">
+            <ul>
+              <li>Spearheaded 50+ application security assessments to identify and remediate vulnerabilities, using HCL AppScan, Nessus, Dependency Checker, and Burp Suite.</li>
+              <li>Mitigated web application vulnerabilities by applying OWASP Top 10 principles, using DAST and SAST methodologies to address 5 critical issues and reduce risk by 25% within 6 months.</li>
+              <li>Designed a cybersecurity awareness program for 200+ employees, highlighting phishing via social media.</li>
+              <li>Developed and implemented 10 Splunk detection rules leveraging the MITRE ATT&CK framework to identify adversary TTPs improving proactive threat detection by 20%.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">AppSec</span>
+              <span class="tag">Burp Suite</span>
+              <span class="tag">Nessus</span>
+              <span class="tag">Splunk</span>
+              <span class="tag">MITRE ATT&CK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="img/3.png" alt="Confiable Logo">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Confiable Solutions</p>
+              <p class="subtitle is-6">JavaScript Developer - <time datetime="2020-6">June 2020</time> - <time datetime="2021-6">June 2021</time></p>
+            </div>
+          </div>
+          <div class="content">
+            <ul>
+              <li>Managed profitable client relationships by developing and maintaining websites and creating dashboards for risk scorecards using HTML, CSS, and JavaScript.</li>
+              <li>Conducted peer code reviews to ensure quality and adherence to best practices.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="img/4.png" alt="SSP Logo">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">SSP Technology</p>
+              <p class="subtitle is-6">Cyber Security Intern - <time datetime="2020-1">January 2020</time> - <time datetime="2020-6">June 2020</time></p>
+            </div>
+          </div>
+          <div class="content">
+            <ul>
+              <li>Provided support in managing and securing Windows Active Directory (AD) environments, including provisioning, access control, and group policy configurations to enhance security and compliance.</li>
+              <li>Assisted in monitoring and responding to security incidents, analyzing system logs and network traffic to identify potential threats and mitigate risks in real-time.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Active Directory</span>
+              <span class="tag">Windows</span>
+              <span class="tag">Security</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects" class="section">
+    <div class="container">
+      <h1 class="title">Projects</h1>
+      <hr />
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="card" style="height: 100%;">
+            <div class="card-content" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">AI-Based Phishing Detection Tool</p>
+                </div>
+              </div>
+              <div class="content is-hidden-touch project-details" style="flex-grow: 1;">
+                <ul>
+                  <li>Developed an AI-based phishing detection tool using machine learning to classify emails as phishing or legitimate based on content, subject lines, and sender information.</li>
+                  <li>Utilized Python and machine learning libraries like Scikit-learn and NLTK for natural language processing (NLP) to extract features from email data.</li>
+                  <li>Integrated VirusTotal for scanning email attachments for malware and used SentinelOne for endpoint detection of phishing-related threats.</li>
+                </ul>
+                <div class="tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Machine Learning</span>
+                  <span class="tag">NLP</span>
+                  <span class="tag">Security</span>
+                </div>
+              </div>
+              <div class="has-text-centered mt-4">
+                <a href="https://github.com/abhidotsh/phishing-detection" class="button is-primary">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card" style="height: 100%;">
+            <div class="card-content" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">Security Operations Center (SOC) Automation Lab</p>
+                </div>
+              </div>
+              <div class="content is-hidden-touch project-details" style="flex-grow: 1;">
+                <ul>
+                  <li>Orchestrated a comprehensive SOC automation lab project, integrating SIEM (Wazuh) and SOAR (Shuffle) technologies to monitor and respond to security events such as Mimikatz detection.</li>
+                  <li>Configured Wazuh agent to detect and alert security events, ensuring the capture of critical telemetry with Sysmon integration.</li>
+                </ul>
+                <div class="tags">
+                  <span class="tag">SIEM</span>
+                  <span class="tag">SOAR</span>
+                  <span class="tag">Wazuh</span>
+                  <span class="tag">Automation</span>
+                </div>
+              </div>
+              <div class="has-text-centered mt-4">
+                <a href="https://github.com/abhidotsh/soc-automation" class="button is-primary">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card" style="height: 100%;">
+            <div class="card-content" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">Acme Coffee Penetration Testing</p>
+                </div>
+              </div>
+              <div class="content is-hidden-touch project-details" style="flex-grow: 1;">
+                <ul>
+                  <li>Performed password cracking using John the Ripper and Hashcat to gain access to the virtual machine and retrieve the system information with root privileges.</li>
+                  <li>Emulating real-world attacks, a pen test of Acme Coffee utilized Nmap and Metasploit for network mapping and exploitation, identifying open ports, and fetching information.</li>
+                  <li>Executed SQL injection using sqlmap to retrieve database information, and version to determine the vulnerabilities which provided database details.</li>
+                </ul>
+                <div class="tags">
+                  <span class="tag">Penetration Testing</span>
+                  <span class="tag">SQL Injection</span>
+                  <span class="tag">Network Security</span>
+                </div>
+              </div>
+              <div class="has-text-centered mt-4">
+                <a href="https://github.com/abhidotsh/acme-pentest" class="button is-primary">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card" style="height: 100%;">
+            <div class="card-content" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">Active Directory Penetration Testing</p>
+                </div>
+              </div>
+              <div class="content is-hidden-touch project-details" style="flex-grow: 1;">
+                <ul>
+                  <li>Established a virtual lab with a domain controller and two user machines, mirroring real-world network scenarios to assess to improve logging, threat detection, and reduce attack potential.</li>
+                  <li>Performed simulated cyber-attacks like LLMNR poisoning, SMB relay, keberoasting, AS-REP roasting and pass-the-ticket attacks to evaluate and improve security controls.</li>
+                </ul>
+                <div class="tags">
+                  <span class="tag">Active Directory</span>
+                  <span class="tag">Penetration Testing</span>
+                  <span class="tag">Network Security</span>
+                </div>
+              </div>
+              <div class="has-text-centered mt-4">
+                <a href="https://github.com/abhidotsh/ad-pentest" class="button is-primary">View on GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="education" class="section">
+    <div class="container">
+      <h1 class="title">Education</h1>
+      <hr />
+      <div class="card">
+        <div class="card-content">
+          <div class="content">
+            <p class="title is-4">Illinois Institute of Technology</p>
+            <p class="subtitle is-6">Master of Applied Science, Cyber Forensic and Security - Expected <time datetime="2025-5">May 2025</time></p>
+          </div>
+        </div>
+      </div>
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="content">
+            <p class="title is-4">University of Pune</p>
+            <p class="subtitle is-6">Bachelor of Engineering, Information Technology - <time datetime="2020-10">October 2020</time></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="section">
+    <div class="container">
+      <h1 class="title">Contact</h1>
+      <hr />
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="https://github.com/abhidotsh" class="icon is-large">
+              <i class="fab fa-2x fa-github"></i>
+            </a>
+            <p class="heading"><a href="https://github.com/abhidotsh">github.com/abhidotsh</a></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="https://linkedin.com/in/abhidotsh" class="icon is-large">
+              <i class="fab fa-2x fa-linkedin"></i>
+            </a>
+            <p class="heading"><a href="https://linkedin.com/in/abhidotsh">linkedin.com/in/abhidotsh</a></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="mailto:abhidotsh@gmail.com" class="icon is-large">
+              <i class="fas fa-2x fa-envelope"></i>
+            </a>
+            <p class="heading"><a href="mailto:abhidotsh@gmail.com">abhidotsh@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="tel:3126788671" class="icon is-large">
+              <i class="fas fa-2x fa-phone"></i>
+            </a>
+            <p class="heading"><a href="tel:3126788671">(312) 678-8671</a></p>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+  <div id="project-5-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Third-Party Risk Management Research</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="columns is-multiline">
+          <div class="column is-one-third">
+            <div id="project-5-modal-carousel" class="carousel">
+              <figure class="image is-square carousel-cell">
+                <img src="img/carousel/1.png">
+              </figure>
+              <figure class="image is-square carousel-cell">
+                <img src="img/carousel/2.png">
+              </figure>
+              <figure class="image is-square carousel-cell">
+                <img src="img/carousel/3.png">
+              </figure>
+            </div>
+          </div>
+          <div class="content">
+            <p>Research paper on "Enhancing Cybersecurity through Effective Third-Party Risk Management and Supply Chain Security" at Illinois Tech</p>
+            <div class="tags">
+              <span class="tag">Research</span>
+              <span class="tag">Risk Management</span>
+              <span class="tag">Supply Chain Security</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+  <div id="project-6-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Cyber-Attack Simulator Research</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div id="project-6-modal-carousel" class="carousel">
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/carousel/1.png">
+          </figure>
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/carousel/2.png">
+          </figure>
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/carousel/3.png">
+          </figure>
+        </div>
+        <div class="content">
+          <p>Research paper on "Design And Implementation of a Devs-Based Cyber-Attack Simulator for Cyber Security" published in IJIRCC</p>
+          <div class="tags">
+            <span class="tag">Research</span>
+            <span class="tag">Cyber-Attack Simulation</span>
+            <span class="tag">Security</span>
+          </div>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <a href="https://github.com/mmacneil/devfolio" target="_blank" class="icon has-text-primary">
+          <i class="fab fa-github"></i> <strong>devfolio</strong></a>
+      </p>
+    </div>
+  </footer>
+  <script src="js/bundle.js"></script>
+</body>
+</html>
